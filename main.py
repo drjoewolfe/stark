@@ -1,5 +1,5 @@
 from configuration import *
-from extractor import *
+from extractors.extractor import *
 from sink import *
 
 
