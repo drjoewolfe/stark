@@ -2,11 +2,22 @@ import time
 
 from selenium.webdriver.common.by import By
 
-import StockInfo
+import stock_info
 from utilities import get_decimal, get_int
 
 
-def extract_money_control(browser, stock_info_request, stark_config, stark_output):
+def extract_money_control(browser, stark_config, stark_input):
+    extracts = {}
+    for stock_info_request in stark_input["stock_info_requests"]:
+        symbol = stock_info_request["symbol"]
+        extracts[symbol] = extract_money_control_for_request(browser, stock_info_request, stark_config)
+
+    return extracts
+
+
+def extract_money_control_for_request(browser, stock_info_request, stark_config):
+    info = None
+
     search_term = stock_info_request["symbol"]
     if "mc_search_term" in stock_info_request:
         search_term = stock_info_request["mc_search_term"]
@@ -19,7 +30,7 @@ def extract_money_control(browser, stock_info_request, stark_config, stark_outpu
         go_button = search_box.find_element(By.XPATH, "../input[2]")
         go_button.click()
 
-        info = StockInfo.StockInfo()
+        info = stock_info.StockInfo()
 
         info.symbol = stock_info_request["symbol"]
         info.name = browser.find_element(By.XPATH, "//div[@id='stockName']/h1").text
@@ -61,8 +72,11 @@ def extract_money_control(browser, stock_info_request, stark_config, stark_outpu
         info.avg_delivery_percent_20D = get_decimal(browser.find_element(By.XPATH,
                                                                          "//td[contains(text(), '20D Avg Delivery(%)')]/../td[2]").text)
 
-        stark_output.append(info)
+        # stark_output.append(info)
+        # extracts[stock_info_request] = info
         print("Extracted " + stock_info_request["symbol"] + " from money-control")
     except Exception as e:
         print("Error extracting " + stock_info_request["symbol"] + ". Skipping...")
         print(e)
+
+    return info
