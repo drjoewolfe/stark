@@ -18,11 +18,13 @@ class StockInfo:
     ttm_eps = None
     ttm_pe = None
     sector_pe = None
+    sector_pb = None
+    sector_dividend_yield = None
     book_value_per_share = None
     pb = None
     face_value = None
     market_cap_crores = None
-    dividend_yeild = None
+    dividend_yield = None
     avg_volume_20D = None
     avg_delivery_percent_20D = None
 
@@ -52,11 +54,13 @@ class StockInfo:
         self.ttm_eps = info.ttm_eps if self.ttm_eps is None else self.ttm_eps
         self.ttm_pe = info.ttm_pe if self.ttm_pe is None else self.ttm_pe
         self.sector_pe = info.sector_pe if self.sector_pe is None else self.sector_pe
+        self.sector_pb = info.sector_pb if self.sector_pb is None else self.sector_pb
+        self.sector_dividend_yield = info.sector_dividend_yield if self.sector_dividend_yield is None else self.sector_dividend_yield
         self.book_value_per_share = info.book_value_per_share if self.book_value_per_share is None else self.book_value_per_share
         self.pb = info.pb if self.pb is None else self.pb
         self.face_value = info.face_value if self.face_value is None else self.face_value
         self.market_cap_crores = info.market_cap_crores if self.market_cap_crores is None else self.market_cap_crores
-        self.dividend_yeild = info.dividend_yeild if self.dividend_yeild is None else self.dividend_yeild
+        self.dividend_yield = info.dividend_yield if self.dividend_yield is None else self.dividend_yield
         self.avg_volume_20D = info.avg_volume_20D if self.avg_volume_20D is None else self.avg_volume_20D
         self.avg_delivery_percent_20D = info.avg_delivery_percent_20D if self.avg_delivery_percent_20D is None else self.avg_delivery_percent_20D
 
@@ -81,10 +85,12 @@ class StockInfo:
                + "ttm_eps:" + str(self.ttm_eps) + ", " \
                + "ttm_pe:" + str(self.ttm_pe) + ", " \
                + "sector_pe:" + str(self.sector_pe) + ", " \
+               + "sector_pb:" + str(self.sector_pb) + ", " \
+               + "sector_dividend_yield:" + str(self.sector_dividend_yield) + ", " \
                + "book_value_per_share:" + str(self.book_value_per_share) + ", " \
                + "pb:" + str(self.pb) + ", " \
                + "face_value:" + str(self.face_value) + ", " \
                + "market_cap_crores:" + str(self.market_cap_crores) + ", " \
-               + "dividend_yeild:" + str(self.dividend_yeild) + ", " \
+               + "dividend_yeild:" + str(self.dividend_yield) + ", " \
                + "avg_volume_20D:" + str(self.avg_volume_20D) + ", " \
                + "avg_delivery_percent_20D:" + str(self.avg_delivery_percent_20D) + " }"

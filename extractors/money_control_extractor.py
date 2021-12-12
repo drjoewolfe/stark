@@ -65,7 +65,7 @@ def extract_money_control_for_request(browser, stock_info_request, stark_config)
             browser.find_element(By.XPATH, "//td[contains(text(), 'Face Value')]/../td[2]").text)
         info.market_cap_crores = get_decimal(browser.find_element(By.XPATH,
                                                                   "//td[contains(text(), 'Mkt Cap (Rs. Cr.)')]/../td[2]").text)
-        info.dividend_yeild = get_decimal(
+        info.dividend_yield = get_decimal(
             browser.find_element(By.XPATH, "//td[contains(text(), 'Dividend Yield')]/../td[2]").text)
         info.avg_volume_20D = get_int(
             browser.find_element(By.XPATH, "//td[contains(text(), '20D Avg Volume')]/../td[2]").text)
@@ -76,7 +76,7 @@ def extract_money_control_for_request(browser, stock_info_request, stark_config)
         # extracts[stock_info_request] = info
         print("Extracted " + stock_info_request["symbol"] + " from money-control")
     except Exception as e:
-        print("Error extracting " + stock_info_request["symbol"] + ". Skipping...")
+        print("Error extracting " + stock_info_request["symbol"] + " from money-control. Skipping...")
         print(e)
 
     return info

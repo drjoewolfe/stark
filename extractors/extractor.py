@@ -1,6 +1,9 @@
 from selenium import webdriver
 
 from extractors.money_control_extractor import extract_money_control
+from extractors.value_research_extractor import extract_value_research
+from extractors.ticker_tape_extractor import extract_ticker_tape
+from extractors.money_works_4me_extractor import extract_money_works_4me
 
 
 def extract(stark_config, stark_input):
@@ -10,21 +13,21 @@ def extract(stark_config, stark_input):
     browser.maximize_window()
 
     money_control_extracts = extract_money_control(browser, stark_config, stark_input)
-    value_research_extracts = extract_money_control(browser, stark_config, stark_input)
-    ticker_tape_extracts = extract_money_control(browser, stark_config, stark_input)
-    money_works_4me_extracts = extract_money_control(browser, stark_config, stark_input)
+    # value_research_extracts = extract_value_research(browser, stark_config, stark_input)
+    ticker_tape_extracts = extract_ticker_tape(browser, stark_config, stark_input)
+    # money_works_4me_extracts = extract_money_works_4me(browser, stark_config, stark_input)
+
+    # extracts = merge(money_control_extracts,
+    #                  value_research_extracts,
+    #                  ticker_tape_extracts,
+    #                  money_works_4me_extracts)
 
     extracts = merge(money_control_extracts,
-                     value_research_extracts,
-                     ticker_tape_extracts,
                      ticker_tape_extracts)
 
     stark_output = []
-    for k, v in money_control_extracts.items():
+    for k, v in extracts.items():
         stark_output.append(v)
-    #
-    # for stock_info_request in stark_input["stock_info_requests"]:
-    #     extract_money_control(browser, stock_info_request, stark_input, stark_output)
 
     browser.close()
 
