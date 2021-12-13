@@ -26,11 +26,12 @@ def extract_ticker_tape_for_request(browser, stock_info_request, stark_config):
         browser.get("https://www.tickertape.in/")
         search_box = browser.find_element(By.ID, "search-stock-input")
         search_box.send_keys(search_term)
-        time.sleep(2)
+        time.sleep(1)
 
-        browser.find_element(By.ID, "react-autowhatever-1").find_elements(By.TAG_NAME, "li")[2].click()
+        search_result_link = browser.find_element(By.XPATH, "//div[@id='react-autowhatever-1']/div//li/div/a").get_attribute("href")
+        browser.get(search_result_link)
 
-        time.sleep(2)
+        time.sleep(1)
         sector_pe = browser.find_element(By.XPATH, "//div[@data-section-tag=\"key-metrics\"]/div/div//span[contains(text(), \"Sector PE\")]/../../../div[2]").text
         sector_pb = browser.find_element(By.XPATH,
                                          "//div[@data-section-tag=\"key-metrics\"]/div/div//span[contains(text(), \"Sector PB\")]/../../../div[2]").text
