@@ -25,6 +25,8 @@ def extract(stark_config, stark_input):
     extracts = merge(money_control_extracts,
                      ticker_tape_extracts)
 
+    # extracts = merge(ticker_tape_extracts)
+
     stark_output = []
     for k, v in extracts.items():
         stark_output.append(v)

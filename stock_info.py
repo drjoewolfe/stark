@@ -27,6 +27,11 @@ class StockInfo:
     dividend_yield = None
     avg_volume_20D = None
     avg_delivery_percent_20D = None
+    tt_intrinsic_value_commentary = None
+    tt_returns_vs_fd_rates_commentary = None
+    tt_dividend_returns_commentary = None
+    tt_entry_pont_commentary = None
+    tt_red_flags_commentary = None
 
     def __init__(self):
         pass
@@ -63,6 +68,11 @@ class StockInfo:
         self.dividend_yield = info.dividend_yield if self.dividend_yield is None else self.dividend_yield
         self.avg_volume_20D = info.avg_volume_20D if self.avg_volume_20D is None else self.avg_volume_20D
         self.avg_delivery_percent_20D = info.avg_delivery_percent_20D if self.avg_delivery_percent_20D is None else self.avg_delivery_percent_20D
+        self.tt_intrinsic_value_commentary = info.tt_intrinsic_value_commentary if self.tt_intrinsic_value_commentary is None else self.tt_intrinsic_value_commentary
+        self.tt_returns_vs_fd_rates_commentary = info.tt_returns_vs_fd_rates_commentary if self.tt_returns_vs_fd_rates_commentary is None else self.tt_returns_vs_fd_rates_commentary
+        self.tt_dividend_returns_commentary = info.tt_dividend_returns_commentary if self.tt_dividend_returns_commentary is None else self.tt_dividend_returns_commentary
+        self.tt_entry_pont_commentary = info.tt_entry_pont_commentary if self.tt_entry_pont_commentary is None else self.tt_entry_pont_commentary
+        self.tt_red_flags_commentary = info.tt_red_flags_commentary if self.tt_red_flags_commentary is None else self.tt_red_flags_commentary
 
     def __str__(self):
         return "{ " \
@@ -93,4 +103,10 @@ class StockInfo:
                + "market_cap_crores:" + str(self.market_cap_crores) + ", " \
                + "dividend_yeild:" + str(self.dividend_yield) + ", " \
                + "avg_volume_20D:" + str(self.avg_volume_20D) + ", " \
-               + "avg_delivery_percent_20D:" + str(self.avg_delivery_percent_20D) + " }"
+               + "avg_delivery_percent_20D:" + str(self.avg_delivery_percent_20D) + ", " \
+               + "tt_intrinsic_value_commentary:" + str(self.tt_intrinsic_value_commentary) + ", " \
+               + "tt_returns_vs_fd_rates_commentary:" + str(self.tt_returns_vs_fd_rates_commentary) + ", " \
+               + "tt_dividend_returns_commentary:" + str(self.tt_dividend_returns_commentary) + ", " \
+               + "tt_entry_pont_commentary:" + str(self.tt_entry_pont_commentary) + ", " \
+               + "tt_red_flags_commentary:" + str(self.tt_red_flags_commentary) \
+               + " }"

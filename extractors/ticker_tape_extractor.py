@@ -38,12 +38,23 @@ def extract_ticker_tape_for_request(browser, stock_info_request, stark_config):
         sector_dividend_yield = browser.find_element(By.XPATH,
                                          "//div[@data-section-tag=\"key-metrics\"]/div/div//span[contains(text(), \"Sector Div Yld\")]/../../../div[2]").text
 
+        tt_intrinsic_value_commentary = browser.find_element(By.XPATH, "//span[contains(text(), 'Intrinsic Value')]/../../p").text
+        tt_returns_vs_fd_rates_commentary = browser.find_element(By.XPATH, "//span[contains(text(), 'Returns vs FD rates')]/../../p").text
+        tt_dividend_returns_commentary = browser.find_element(By.XPATH, "//span[contains(text(), 'Dividend Returns')]/../../p").text
+        tt_entry_pont_commentary = browser.find_element(By.XPATH, "//span[contains(text(), 'Entry Point')]/../../p").text
+        tt_red_flags_commentary = browser.find_element(By.XPATH, "//span[contains(text(), 'Red Flag')]/../../p").text
+
         info = stock_info.StockInfo()
 
         info.symbol = stock_info_request["symbol"]
         info.sector_pe = sector_pe
         info.sector_pb = sector_pb
         info.sector_dividend_yield = sector_dividend_yield
+        info.tt_intrinsic_value_commentary = tt_intrinsic_value_commentary
+        info.tt_returns_vs_fd_rates_commentary = tt_returns_vs_fd_rates_commentary
+        info.tt_dividend_returns_commentary = tt_dividend_returns_commentary
+        info.tt_entry_pont_commentary = tt_entry_pont_commentary
+        info.tt_red_flags_commentary = tt_red_flags_commentary
 
         print("Extracted " + stock_info_request["symbol"] + " from ticker-tape")
     except Exception as e:
