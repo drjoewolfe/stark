@@ -1,5 +1,15 @@
+from datetime import datetime
+
+
 def generate_output(stark_output):
-    with open('out/stark_output.csv', 'w') as csvfile:
+    print(f"Generating output")
+    datestamp = datetime.now().strftime("%Y_%m_%d-%I_%M_%S_%p")
+    filename = "stark_output" + "_" + datestamp + ".csv"
+    filepath = "out/" + filename
+
+    counter, size = 1, len(stark_output)
+    print(f"\tFilename: {filename}")
+    with open(filepath, 'w') as csvfile:
         header = "symbol, name, sector, price, day_open_price, day_previous_close_price, volume, value_lakhs, vwap, beta, day_high_price, day_low_price, uc_limit, lc_limit, week_52_high, " \
                  "week_52_low, ttm_eps, ttm_pe, sector_pe, sector_pb, sector_dividend_yield, book_value_per_share, pb, face_value, market_cap_crores, dividend_yeild, avg_volume_20D, avg_delivery_percent_20D, " \
                  "tt_intrinsic_value_commentary, tt_returns_vs_fd_rates_commentary, tt_dividend_returns_commentary, tt_entry_pont_commentary, tt_red_flags_commentary"
@@ -42,6 +52,9 @@ def generate_output(stark_output):
                      + "\"" + str(info.tt_entry_pont_commentary) + "\"" + ", " \
                      + "\"" + str(info.tt_red_flags_commentary) + "\""
 
-            print(info)
+            print(f"\t\t[Record {counter} / {size}] {info}")
             csvfile.writelines(record)
             csvfile.write("\n")
+            counter += 1
+
+        print(f"\tOutput file generated successfully")
