@@ -162,6 +162,60 @@
     },
     {
       "symbol": "WIPRO"
+    },
+    {
+      "symbol": "SONATSOFTW"
+    },
+    {
+      "symbol": "AVANTI",
+      "mc_search_term": "AVANTI Feeds"
+    },
+    {
+      "symbol": "KEI",
+      "mc_search_term": "KEI Industries"
+    },
+    {
+      "symbol": "CASTROLIND"
+    },
+    {
+      "symbol": "COALINDIA"
+    },
+    {
+      "symbol": "CUMMINSIND"
+    },
+    {
+      "symbol": "EXCELINDUS"
+    },
+    {
+      "symbol": "OFSS"
+    },
+    {
+      "symbol": "CDSL"
+    },
+    {
+      "symbol": "ONGC"
+    },
+    {
+      "symbol": "GSPL",
+      "mc_search_term": "Gujarat State Petronet"
+    },
+    {
+      "symbol": "MPHASIS"
+    },
+    {
+      "symbol": "PERSISTENT"
+    },
+    {
+      "symbol": "BALKRISIND"
+    },
+    {
+      "symbol": "FINPIPE"
+    },
+    {
+      "symbol": "TTKPRESTIG"
+    },
+    {
+      "symbol": "PIDILITIND"
     }
   ]
 }

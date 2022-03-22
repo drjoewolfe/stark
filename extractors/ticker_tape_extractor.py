@@ -19,7 +19,7 @@ def extract_ticker_tape(browser, stark_config, stark_input):
             print(f"\t\tExtraction successful for {symbol}")
         except Exception as e:
             print(f"\t\tError extracting {symbol}. Skipping...")
-            print(e)
+            print(repr(e))
         counter += 1
 
     return extracts
