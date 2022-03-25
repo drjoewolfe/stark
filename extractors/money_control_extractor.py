@@ -1,4 +1,5 @@
 import time
+from termcolor import colored
 
 from selenium.webdriver.common.by import By
 
@@ -6,32 +7,37 @@ import stock_info
 from utilities import get_decimal, get_int
 
 
-def extract_money_control(browser, stark_config, stark_input):
+def extract_money_control(browser, stark_config, stock_extract_configuration_map, stock_extract_symbols):
     print(f"Money Control (https://www.moneycontrol.com/)")
     extracts = {}
-    stock_info_requests = stark_input["stock_info_requests"]
-    counter, size = 1, len(stock_info_requests)
-    for stock_info_request in stock_info_requests:
-        symbol = stock_info_request["symbol"]
-        print(f"\t[{counter} / {size}] Extracting " + stock_info_request["symbol"] + " from money-control")
+
+    stock_extract_configurations = []
+    for extract_symbol in stock_extract_symbols:
+        stock_extract_configurations.append(stock_extract_configuration_map[extract_symbol])
+
+    # stock_info_requests = stark_input["stock_info_requests"]
+    counter, size = 1, len(stock_extract_configurations)
+    for configuration in stock_extract_configurations:
+        symbol = configuration["symbol"]
+        print(f"\t[{counter} / {size}] Extracting " + configuration["symbol"] + " from money-control")
         try:
-            extracts[symbol] = extract_money_control_for_request(browser, stock_info_request, stark_config)
-            print(f"\t\tExtraction successful for {symbol}")
+            extracts[symbol] = extract_money_control_for_request(browser, configuration, stark_config)
+            print(colored(f"\t\tExtraction successful for {symbol}", "green"))
         except Exception as e:
-            print(f"\t\tError extracting {symbol}. Skipping...")
-            print(repr(e))
+            print(colored(f"\t\tError extracting {symbol}. Skipping...", "red"))
+            print("\t\t" + repr(e))
         counter += 1
 
     return extracts
 
 
-def extract_money_control_for_request(browser, stock_info_request, stark_config):
+def extract_money_control_for_request(browser, configuration, stark_config):
     info = None
 
-    symbol = stock_info_request["symbol"]
+    symbol = configuration["symbol"]
     search_term = symbol
-    if "mc_search_term" in stock_info_request:
-        search_term = stock_info_request["mc_search_term"]
+    if "mc_search_term" in configuration:
+        search_term = configuration["mc_search_term"]
 
     browser.get("https://www.moneycontrol.com/india/stockpricequote/")
     search_box = browser.find_element(By.ID, "company")
@@ -42,7 +48,7 @@ def extract_money_control_for_request(browser, stock_info_request, stark_config)
 
     info = stock_info.StockInfo()
 
-    info.symbol = stock_info_request["symbol"]
+    info.symbol = configuration["symbol"]
     info.name = browser.find_element(By.XPATH, "//div[@id='stockName']/h1").text
     info.sector = browser.find_element(By.XPATH, "//div[@id='stockName']/span/strong/a").text
     info.price = get_decimal(browser.find_element(By.ID, "nsespotval").get_attribute("value"))

@@ -1,36 +1,41 @@
 import time
-
+from termcolor import colored
 from selenium.webdriver.common.by import By
 
 import stock_info
 from utilities import get_decimal, get_int
 
 
-def extract_ticker_tape(browser, stark_config, stark_input):
+def extract_ticker_tape(browser, stark_config, stock_extract_configuration_map, stock_extract_symbols):
     print(f"Ticker Tape (https://www.tickertape.in/)")
     extracts = {}
-    stock_info_requests = stark_input["stock_info_requests"]
-    counter, size = 1, len(stock_info_requests)
-    for stock_info_request in stock_info_requests:
-        symbol = stock_info_request["symbol"]
-        print(f"\t[{counter} / {size}] Extracting " + stock_info_request["symbol"] + " from ticker-tape")
+
+    stock_extract_configurations = []
+    for extract_symbol in stock_extract_symbols:
+        stock_extract_configurations.append(stock_extract_configuration_map[extract_symbol])
+
+    # stock_info_requests = stark_input["stock_info_requests"]
+    counter, size = 1, len(stock_extract_configurations)
+    for configuration in stock_extract_configurations:
+        symbol = configuration["symbol"]
+        print(f"\t[{counter} / {size}] Extracting " + configuration["symbol"] + " from ticker-tape")
         try:
-            extracts[symbol] = extract_ticker_tape_for_request(browser, stock_info_request, stark_config)
-            print(f"\t\tExtraction successful for {symbol}")
+            extracts[symbol] = extract_ticker_tape_for_request(browser, configuration, stark_config)
+            print(colored(f"\t\tExtraction successful for {symbol}", "green"))
         except Exception as e:
-            print(f"\t\tError extracting {symbol}. Skipping...")
-            print(repr(e))
+            print(colored(f"\t\tError extracting {symbol}. Skipping...", "red"))
+            print("\t\t" + repr(e))
         counter += 1
 
     return extracts
 
 
-def extract_ticker_tape_for_request(browser, stock_info_request, stark_config):
+def extract_ticker_tape_for_request(browser, configuration, stark_config):
     info = None
 
-    search_term = stock_info_request["symbol"]
-    if "tt_search_term" in stock_info_request:
-        search_term = stock_info_request["tt_search_term"]
+    search_term = configuration["symbol"]
+    if "tt_search_term" in configuration:
+        search_term = configuration["tt_search_term"]
 
     browser.get("https://www.tickertape.in/")
     search_box = browser.find_element(By.ID, "search-stock-input")
@@ -55,7 +60,7 @@ def extract_ticker_tape_for_request(browser, stock_info_request, stark_config):
 
     info = stock_info.StockInfo()
 
-    info.symbol = stock_info_request["symbol"]
+    info.symbol = configuration["symbol"]
     info.sector_pe = sector_pe
     info.sector_pb = sector_pb
     info.sector_dividend_yield = sector_dividend_yield

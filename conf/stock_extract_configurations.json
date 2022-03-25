@@ -1,0 +1,280 @@
+{
+	"stock_extract_configurations": [
+		{
+			"symbol": "ACC",
+			"mc_search_term": "500410"
+		},
+		{
+			"symbol": "ADANIPOWER",
+			"mc_search_term": "533096"
+		},
+		{
+			"symbol": "ALKEM"
+		},
+		{
+			"symbol": "ASIANPAINT",
+			"mc_search_term": "500820"
+		},
+		{
+			"symbol": "AUROPHARMA"
+		},
+		{
+			"symbol": "AVANTIFEED",
+			"mc_search_term": "AVANTI Feeds"
+		},
+		{
+			"symbol": "AXISBANK"
+		},
+		{
+			"symbol": "BAJAJ-AUTO",
+			"mc_search_term": "532977"
+		},
+		{
+			"symbol": "BAJFINANCE",
+			"mc_search_term": "500034"
+		},
+		{
+			"symbol": "BALKRISIND"
+		},
+		{
+			"symbol": "BANDHANBNK"
+		},
+		{
+			"symbol": "BANKBARODA"
+		},
+		{
+			"symbol": "BATAINDIA"
+		},
+		{
+			"symbol": "BHARTIARTL"
+		},
+		{
+			"symbol": "BHEL",
+			"mc_search_term": "500103"
+		},
+		{
+			"symbol": "BPCL"
+		},
+		{
+			"symbol": "CASTROLIND"
+		},
+		{
+			"symbol": "CDSL"
+		},
+		{
+			"symbol": "CIPLA"
+		},
+		{
+			"symbol": "COALINDIA"
+		},
+		{
+			"symbol": "CROMPTON",
+			"mc_search_term": "539876"
+		},
+		{
+			"symbol": "CUMMINSIND"
+		},
+		{
+			"symbol": "EXCELINDUS"
+		},
+		{
+			"symbol": "FEDERALBNK"
+		},
+		{
+			"symbol": "FINPIPE"
+		},
+		{
+			"symbol": "GAIL"
+		},
+		{
+			"symbol": "GICRE"
+		},
+		{
+			"symbol": "GMDCLTD",
+			"mc_search_term": "532181"
+		},
+		{
+			"symbol": "GNFC",
+			"mc_search_term": "500670"
+		},
+		{
+			"symbol": "GRASIM"
+		},
+		{
+			"symbol": "GSPL",
+			"mc_search_term": "Gujarat State Petronet"
+		},
+		{
+			"symbol": "HCLTECH"
+		},
+		{
+			"symbol": "HEROMOTOCO"
+		},
+		{
+			"symbol": "HINDALCO",
+			"mc_search_term": "500440"
+		},
+		{
+			"symbol": "HINDPETRO"
+		},
+		{
+			"symbol": "HINDUNILVR"
+		},
+		{
+			"symbol": "HINDZINC"
+		},
+		{
+			"symbol": "ICICIBANK",
+			"mc_search_term": "532174"
+		},
+		{
+			"symbol": "ICICIGI"
+		},
+		{
+			"symbol": "IDEA",
+			"mc_search_term": "Vodafone IDEA"
+		},
+		{
+			"symbol": "IDFCFIRSTB"
+		},
+		{
+			"symbol": "INDIGO",
+			"mc_search_term": "539448",
+			"tt_search_term": "Interglobe Aviation Ltd"
+		},
+		{
+			"symbol": "INFY"
+		},
+		{
+			"symbol": "IOC"
+		},
+		{
+			"symbol": "IRCTC",
+			"mc_search_term": "542830"
+		},
+		{
+			"symbol": "ITC",
+			"mc_search_term": "500875"
+		},
+		{
+			"symbol": "JSWSTEEL",
+			"mc_search_term": "500228"
+		},
+		{
+			"symbol": "KEI",
+			"mc_search_term": "KEI Industries"
+		},
+		{
+			"symbol": "LUPIN",
+			"mc_search_term": "500257"
+		},
+		{
+			"symbol": "M&M",
+			"mc_search_term": "500520"
+		},
+		{
+			"symbol": "MARUTI",
+			"mc_search_term": "532500"
+		},
+		{
+			"symbol": "MPHASIS"
+		},
+		{
+			"symbol": "MUTHOOTFIN",
+			"mc_search_term": "533398"
+		},
+		{
+			"symbol": "NAUKRI",
+			"mc_search_term": "532777"
+		},
+		{
+			"symbol": "NMDC",
+			"mc_search_term": "526371"
+		},
+		{
+			"symbol": "NTPC",
+			"mc_search_term": "532555"
+		},
+		{
+			"symbol": "OFSS"
+		},
+		{
+			"symbol": "ONGC"
+		},
+		{
+			"symbol": "PERSISTENT"
+		},
+		{
+			"symbol": "PETRONET",
+			"mc_search_term": "532522"
+		},
+		{
+			"symbol": "PFC"
+		},
+		{
+			"symbol": "PIDILITIND"
+		},
+		{
+			"symbol": "POWERGRID",
+			"mc_search_term": "532898"
+		},
+		{
+			"symbol": "RBLBANK",
+			"mc_search_term": "540065"
+		},
+		{
+			"symbol": "SAIL",
+			"mc_search_term": "500113"
+		},
+		{
+			"symbol": "SBICARD"
+		},
+		{
+			"symbol": "SBIN"
+		},
+		{
+			"symbol": "SONATSOFTW"
+		},
+		{
+			"symbol": "TATAMOTORS",
+			"mc_search_term": "500570"
+		},
+		{
+			"symbol": "TATASTEEL",
+			"mc_search_term": "500470"
+		},
+		{
+			"symbol": "TCS"
+		},
+		{
+			"symbol": "TECHM",
+			"mc_search_term": "532755"
+		},
+		{
+			"symbol": "TTKPRESTIG"
+		},
+		{
+			"symbol": "TVSMOTOR"
+		},
+		{
+			"symbol": "ULTRACEMCO"
+		},
+		{
+			"symbol": "UPL",
+			"mc_search_term": "512070"
+		},
+		{
+			"symbol": "VGUARD"
+		},
+		{
+			"symbol": "VOLTAS"
+		},
+		{
+			"symbol": "WHIRLPOOL",
+			"mc_search_term": "500238"
+		},
+		{
+			"symbol": "WIPRO"
+		}
+	]
+}
