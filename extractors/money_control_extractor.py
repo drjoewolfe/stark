@@ -21,7 +21,7 @@ def extract_money_control(browser, stark_config, stock_extract_configuration_map
         symbol = configuration["symbol"]
         print(f"\t[{counter} / {size}] Extracting " + configuration["symbol"] + " from money-control")
         try:
-            extracts[symbol] = extract_money_control_for_request(browser, configuration, stark_config)
+            extracts[symbol] = extract_money_control_for_request(browser, configuration)
             print(colored(f"\t\tExtraction successful for {symbol}", "green"))
         except Exception as e:
             print(colored(f"\t\tError extracting {symbol}. Skipping...", "red"))
@@ -31,7 +31,7 @@ def extract_money_control(browser, stark_config, stock_extract_configuration_map
     return extracts
 
 
-def extract_money_control_for_request(browser, configuration, stark_config):
+def extract_money_control_for_request(browser, configuration):
     info = None
 
     symbol = configuration["symbol"]

@@ -20,7 +20,7 @@ def extract_ticker_tape(browser, stark_config, stock_extract_configuration_map, 
         symbol = configuration["symbol"]
         print(f"\t[{counter} / {size}] Extracting " + configuration["symbol"] + " from ticker-tape")
         try:
-            extracts[symbol] = extract_ticker_tape_for_request(browser, configuration, stark_config)
+            extracts[symbol] = extract_ticker_tape_for_request(browser, configuration)
             print(colored(f"\t\tExtraction successful for {symbol}", "green"))
         except Exception as e:
             print(colored(f"\t\tError extracting {symbol}. Skipping...", "red"))
@@ -30,7 +30,7 @@ def extract_ticker_tape(browser, stark_config, stock_extract_configuration_map, 
     return extracts
 
 
-def extract_ticker_tape_for_request(browser, configuration, stark_config):
+def extract_ticker_tape_for_request(browser, configuration):
     info = None
 
     search_term = configuration["symbol"]
