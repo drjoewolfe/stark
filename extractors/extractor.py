@@ -35,28 +35,27 @@ def extract_stocks(stark_config, stark_input):
         for extractor_name in extractors_to_run:
             if extractor_name == "money_control":
                 print(f"\t\tExtracting " + configuration["symbol"] + " from money-control")
-                try:
-                    money_control_info = extract_money_control_for_request(browser, configuration)
-                    info.merge(money_control_info)
-                    print(colored(f"\t\t\tExtraction successful for {symbol}", "green"))
-                except Exception as e:
-                    print(colored(f"\t\t\tError extracting {symbol}. Skipping...", "red"))
-                    print("\t\t\t" + repr(e))
+                execute_extractor(extract_money_control_for_request, browser, configuration, info)
 
             elif extractor_name == "ticker_tape":
                 print(f"\t\tExtracting " + configuration["symbol"] + " from ticker-tape")
-                try:
-                    ticker_tape_info = extract_ticker_tape_for_request(browser, configuration)
-                    info.merge(ticker_tape_info)
-                    print(colored(f"\t\t\tExtraction successful for {symbol}", "green"))
-                except Exception as e:
-                    print(colored(f"\t\t\tError extracting {symbol}. Skipping...", "red"))
-                    print("\t\t\t" + repr(e))
+                execute_extractor(extract_ticker_tape_for_request, browser, configuration, info)
 
         extracts.append(info)
         counter += 1
 
     return extracts
+
+
+def execute_extractor(extractor_func, browser, configuration, merged_info):
+    try:
+        symbol = configuration["symbol"]
+        extracted_stock_info = extractor_func(browser, configuration)
+        merged_info.merge(extracted_stock_info)
+        print(colored(f"\t\t\tExtraction successful for {symbol}", "green"))
+    except Exception as e:
+        print(colored(f"\t\t\tError extracting {symbol}. Skipping...", "red"))
+        print("\t\t\t" + repr(e))
 
 
 def get_stock_extract_configuration_map(stark_config):
@@ -98,28 +97,6 @@ def extract(stark_config, stock_extract_configuration_map, stock_extract_symbols
     browser.close()
 
     return stark_output
-
-
-def extract_symbols(browser, stark_config, stock_extract_configuration_map, stock_extract_symbols):
-    extracts = {}
-
-    stock_extract_configurations = []
-    for extract_symbol in stock_extract_symbols:
-        stock_extract_configurations.append(stock_extract_configuration_map[extract_symbol])
-
-    counter, size = 1, len(stock_extract_configurations)
-    for configuration in stock_extract_configurations:
-        symbol = configuration["symbol"]
-        print(f"\t[{counter} / {size}] " + configuration["symbol"])
-        try:
-            extracts[symbol] = extract_money_control_for_request(browser, configuration, stark_config)
-            print(colored(f"\t\tExtraction successful for {symbol}", "green"))
-        except Exception as e:
-            print(colored(f"\t\tError extracting {symbol}. Skipping...", "red"))
-            print("\t\t" + repr(e))
-        counter += 1
-
-    return extracts
 
 
 def merge(*argv):
