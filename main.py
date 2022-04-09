@@ -16,9 +16,9 @@ if __name__ == '__main__':
     print("")
     print(f"Running extractors")
     # stark_output = extract(stark_config, stock_extract_configuration_map, stock_extract_symbols)
-    stark_output = extract_stocks(stark_config, stark_input)
+    summary = run_extractors(stark_config, stark_input)
 
     print("")
-    generate_output(stark_output)
+    generate_output(summary)
 
     print("\nExtraction completed")

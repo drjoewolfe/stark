@@ -3,198 +3,1187 @@ system:
   chrome_driver_location: "D:\\Code\\modules\\chromedriver_win32\\chromedriver.exe"
 
 stock_extract_configurations:
-  - symbol: ACC
-    mc_search_term: '500410'
-
-  - symbol: ADANIPOWER
-    mc_search_term: '533096'
-
-  - symbol: ALKEM
-
-  - symbol: ASIANPAINT
-    mc_search_term: '500820'
-
-  - symbol: AUROPHARMA
-
-  - symbol: AVANTIFEED
-    mc_search_term: AVANTI Feeds
-
-  - symbol: AXISBANK
-
-  - symbol: BAJAJ-AUTO
-    mc_search_term: '532977'
-
-  - symbol: BAJFINANCE
-    mc_search_term: '500034'
-
-  - symbol: BALKRISIND
-
-  - symbol: BANDHANBNK
-
-  - symbol: BANKBARODA
-
-  - symbol: BATAINDIA
-
-  - symbol: BHARTIARTL
-
-  - symbol: BHEL
-    mc_search_term: '500103'
-
-  - symbol: BPCL
-
-  - symbol: CASTROLIND
-
-  - symbol: CDSL
-
-  - symbol: CIPLA
-
-  - symbol: COALINDIA
-
-  - symbol: CROMPTON
-    mc_search_term: '539876'
-
-  - symbol: CUMMINSIND
-
-  - symbol: EXCELINDUS
-
-  - symbol: FEDERALBNK
-
-  - symbol: FINPIPE
-
-  - symbol: GAIL
-
-  - symbol: GICRE
-
-  - symbol: GMDCLTD
-    mc_search_term: '532181'
-
-  - symbol: GNFC
-    mc_search_term: '500670'
-
-  - symbol: GRASIM
-
-  - symbol: GSPL
-    mc_search_term: Gujarat State Petronet
-
-  - symbol: HCLTECH
-
-  - symbol: HEROMOTOCO
-
-  - symbol: HINDALCO
-    mc_search_term: '500440'
-
-  - symbol: HINDPETRO
-
-  - symbol: HINDUNILVR
-
-  - symbol: HINDZINC
-
-  - symbol: ICICIBANK
-    mc_search_term: '532174'
-
-  - symbol: ICICIGI
-
-  - symbol: IDEA
-    mc_search_term: Vodafone IDEA
-
-  - symbol: IDFCFIRSTB
-
-  - symbol: INDIGO
-    mc_search_term: '539448'
-    tt_search_term: Interglobe Aviation Ltd
-
-  - symbol: INFY
-
-  - symbol: IOC
-
-  - symbol: IRCTC
-    mc_search_term: '542830'
-
-  - symbol: ITC
-    mc_search_term: '500875'
-
-  - symbol: JSWSTEEL
-    mc_search_term: '500228'
-
-  - symbol: KEI
-    mc_search_term: KEI Industries
-
-  - symbol: LUPIN
-    mc_search_term: '500257'
-
-  - symbol: M&M
-    mc_search_term: '500520'
-
-  - symbol: MARUTI
-    mc_search_term: '532500'
-
-  - symbol: MPHASIS
-
-  - symbol: MUTHOOTFIN
-    mc_search_term: '533398'
-
-  - symbol: NAUKRI
-    mc_search_term: '532777'
-
-  - symbol: NMDC
-    mc_search_term: '526371'
-
-  - symbol: NTPC
-    mc_search_term: '532555'
-
-  - symbol: OFSS
-
-  - symbol: ONGC
-
-  - symbol: PERSISTENT
-
-  - symbol: PETRONET
-    mc_search_term: '532522'
-
-  - symbol: PFC
-
-  - symbol: PIDILITIND
-
-  - symbol: POWERGRID
-    mc_search_term: '532898'
-
-  - symbol: RBLBANK
-    mc_search_term: '540065'
-
-  - symbol: SAIL
-    mc_search_term: '500113'
-
-  - symbol: SBICARD
-
-  - symbol: SBIN
-
-  - symbol: SONATSOFTW
-
-  - symbol: TATAMOTORS
-    mc_search_term: '500570'
-
-  - symbol: TATASTEEL
-    mc_search_term: '500470'
-
-  - symbol: TCS
-
-  - symbol: TECHM
-    mc_search_term: '532755'
-
-  - symbol: TTKPRESTIG
-
-  - symbol: TVSMOTOR
-
-  - symbol: ULTRACEMCO
-
-  - symbol: UPL
-    mc_search_term: '512070'
-
-  - symbol: VGUARD
-
-  - symbol: VOLTAS
-
-  - symbol: WHIRLPOOL
-    mc_search_term: '500238'
-
-  - symbol: WIPRO
+  -
+      serial_number: 1
+      symbol: ACC
+      nse_code: ACC
+      bse_code: 500410
+      company: ACC Limited
+      mc_search_term: 500410
+      tt_search_term:
+  -
+      serial_number: 2
+      symbol: ADANIPOWER
+      nse_code: ADANIPOWER
+      bse_code: 533096
+      company: Adani Power
+      mc_search_term: 533096
+      tt_search_term:
+  -
+      serial_number: 3
+      symbol: ALKEM
+      nse_code: ALKEM
+      bse_code:
+      company:
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 4
+      symbol: ASIANPAINT
+      nse_code: ASIANPAINT
+      bse_code: 500820
+      company:
+      mc_search_term: 500820
+      tt_search_term:
+  -
+      serial_number: 5
+      symbol: AUROPHARMA
+      nse_code: AUROPHARMA
+      bse_code:
+      company:
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 6
+      symbol: AVANTIFEED
+      nse_code: AVANTIFEED
+      bse_code:
+      company:
+      mc_search_term: AVANTI Feeds
+      tt_search_term:
+  -
+      serial_number: 7
+      symbol: AXISBANK
+      nse_code: AXISBANK
+      bse_code:
+      company:
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 8
+      symbol: BAJAJ-AUTO
+      nse_code: BAJAJ-AUTO
+      bse_code: 532977
+      company:
+      mc_search_term: 532977
+      tt_search_term:
+  -
+      serial_number: 9
+      symbol: BAJFINANCE
+      nse_code: BAJFINANCE
+      bse_code: 500034
+      company:
+      mc_search_term: 500034
+      tt_search_term:
+  -
+      serial_number: 10
+      symbol: BALKRISIND
+      nse_code: BALKRISIND
+      bse_code:
+      company: Balkrishna Industries Ltd
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 11
+      symbol: BANDHANBNK
+      nse_code: BANDHANBNK
+      bse_code:
+      company:
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 12
+      symbol: BANKBARODA
+      nse_code: BANKBARODA
+      bse_code:
+      company:
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 13
+      symbol: BATAINDIA
+      nse_code: BATAINDIA
+      bse_code:
+      company:
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 14
+      symbol: BHARTIARTL
+      nse_code: BHARTIARTL
+      bse_code:
+      company:
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 15
+      symbol: BHEL
+      nse_code: BHEL
+      bse_code: 500103
+      company:
+      mc_search_term: 500103
+      tt_search_term:
+  -
+      serial_number: 16
+      symbol: BPCL
+      nse_code: BPCL
+      bse_code:
+      company:
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 17
+      symbol: CASTROLIND
+      nse_code: CASTROLIND
+      bse_code:
+      company:
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 18
+      symbol: CDSL
+      nse_code: CDSL
+      bse_code:
+      company: Central Depository Services (India) Ltd
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 19
+      symbol: CIPLA
+      nse_code: CIPLA
+      bse_code:
+      company:
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 20
+      symbol: COALINDIA
+      nse_code: COALINDIA
+      bse_code:
+      company:
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 21
+      symbol: CROMPTON
+      nse_code: CROMPTON
+      bse_code: 539876
+      company:
+      mc_search_term: 539876
+      tt_search_term:
+  -
+      serial_number: 22
+      symbol: CUMMINSIND
+      nse_code: CUMMINSIND
+      bse_code:
+      company:
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 23
+      symbol: EXCELINDUS
+      nse_code: EXCELINDUS
+      bse_code:
+      company:
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 24
+      symbol: FEDERALBNK
+      nse_code: FEDERALBNK
+      bse_code:
+      company:
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 25
+      symbol: FINOLEXIND
+      nse_code: FINOLEXIND
+      bse_code:
+      company:
+      mc_search_term: FINPIPE
+      tt_search_term: FINPIPE
+  -
+      serial_number: 26
+      symbol: GAIL
+      nse_code: GAIL
+      bse_code:
+      company:
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 27
+      symbol: GICRE
+      nse_code: GICRE
+      bse_code:
+      company:
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 28
+      symbol: GMDCLTD
+      nse_code: GMDCLTD
+      bse_code: 532181
+      company:
+      mc_search_term: 532181
+      tt_search_term:
+  -
+      serial_number: 29
+      symbol: GNFC
+      nse_code: GNFC
+      bse_code: 500670
+      company:
+      mc_search_term: 500670
+      tt_search_term:
+  -
+      serial_number: 30
+      symbol: GRASIM
+      nse_code: GRASIM
+      bse_code:
+      company:
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 31
+      symbol: GSPL
+      nse_code: GSPL
+      bse_code:
+      company:
+      mc_search_term: Gujarat State Petronet
+      tt_search_term:
+  -
+      serial_number: 32
+      symbol: HCLTECH
+      nse_code: HCLTECH
+      bse_code:
+      company:
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 33
+      symbol: HEROMOTOCO
+      nse_code: HEROMOTOCO
+      bse_code:
+      company:
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 34
+      symbol: HINDALCO
+      nse_code: HINDALCO
+      bse_code: 500440
+      company:
+      mc_search_term: 500440
+      tt_search_term:
+  -
+      serial_number: 35
+      symbol: HINDPETRO
+      nse_code: HINDPETRO
+      bse_code:
+      company:
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 36
+      symbol: HINDUNILVR
+      nse_code: HINDUNILVR
+      bse_code:
+      company:
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 37
+      symbol: HINDZINC
+      nse_code: HINDZINC
+      bse_code:
+      company:
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 38
+      symbol: ICICIBANK
+      nse_code: ICICIBANK
+      bse_code: 532174
+      company:
+      mc_search_term: 532174
+      tt_search_term:
+  -
+      serial_number: 39
+      symbol: ICICIGI
+      nse_code: ICICIGI
+      bse_code:
+      company:
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 40
+      symbol: IDEA
+      nse_code: IDEA
+      bse_code:
+      company:
+      mc_search_term: Vodafone IDEA
+      tt_search_term:
+  -
+      serial_number: 41
+      symbol: IDFCFIRSTB
+      nse_code: IDFCFIRSTB
+      bse_code:
+      company:
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 42
+      symbol: INDIGO
+      nse_code: INDIGO
+      bse_code: 539448
+      company:
+      mc_search_term: 539448
+      tt_search_term: Interglobe Aviation Ltd
+  -
+      serial_number: 43
+      symbol: INFY
+      nse_code: INFY
+      bse_code:
+      company:
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 44
+      symbol: IOC
+      nse_code: IOC
+      bse_code:
+      company:
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 45
+      symbol: IRCTC
+      nse_code: IRCTC
+      bse_code: 542830
+      company:
+      mc_search_term: 542830
+      tt_search_term:
+  -
+      serial_number: 46
+      symbol: ITC
+      nse_code: ITC
+      bse_code: 500875
+      company:
+      mc_search_term: 500875
+      tt_search_term:
+  -
+      serial_number: 47
+      symbol: JSWSTEEL
+      nse_code: JSWSTEEL
+      bse_code: 500228
+      company:
+      mc_search_term: 500228
+      tt_search_term:
+  -
+      serial_number: 48
+      symbol: KEI
+      nse_code: KEI
+      bse_code:
+      company: KEI Industries
+      mc_search_term: KEI Industries
+      tt_search_term:
+  -
+      serial_number: 49
+      symbol: LUPIN
+      nse_code: LUPIN
+      bse_code: 500257
+      company:
+      mc_search_term: 500257
+      tt_search_term:
+  -
+      serial_number: 50
+      symbol: M&M
+      nse_code: M&M
+      bse_code: 500520
+      company:
+      mc_search_term: 500520
+      tt_search_term:
+  -
+      serial_number: 51
+      symbol: MARUTI
+      nse_code: MARUTI
+      bse_code: 532500
+      company:
+      mc_search_term: 532500
+      tt_search_term:
+  -
+      serial_number: 52
+      symbol: MPHASIS
+      nse_code: MPHASIS
+      bse_code:
+      company:
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 53
+      symbol: MUTHOOTFIN
+      nse_code: MUTHOOTFIN
+      bse_code: 533398
+      company:
+      mc_search_term: 533398
+      tt_search_term:
+  -
+      serial_number: 54
+      symbol: NAUKRI
+      nse_code: NAUKRI
+      bse_code: 532777
+      company:
+      mc_search_term: 532777
+      tt_search_term:
+  -
+      serial_number: 55
+      symbol: NMDC
+      nse_code: NMDC
+      bse_code: 526371
+      company: National Mineral Development Corporation
+      mc_search_term: 526371
+      tt_search_term:
+  -
+      serial_number: 56
+      symbol: NTPC
+      nse_code: NTPC
+      bse_code: 532555
+      company:
+      mc_search_term: 532555
+      tt_search_term:
+  -
+      serial_number: 57
+      symbol: OFSS
+      nse_code: OFSS
+      bse_code: 532466
+      company: Oracle Financial Services Software Ltd
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 58
+      symbol: ONGC
+      nse_code: ONGC
+      bse_code:
+      company:
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 59
+      symbol: PERSISTENT
+      nse_code: PERSISTENT
+      bse_code:
+      company:
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 60
+      symbol: PETRONET
+      nse_code: PETRONET
+      bse_code: 532522
+      company:
+      mc_search_term: 532522
+      tt_search_term:
+  -
+      serial_number: 61
+      symbol: PFC
+      nse_code: PFC
+      bse_code: 532810
+      company: Power Finance Corporation Ltd
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 62
+      symbol: PIDILITIND
+      nse_code: PIDILITIND
+      bse_code:
+      company:
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 63
+      symbol: POWERGRID
+      nse_code: POWERGRID
+      bse_code: 532898
+      company:
+      mc_search_term: 532898
+      tt_search_term:
+  -
+      serial_number: 64
+      symbol: RBLBANK
+      nse_code: RBLBANK
+      bse_code: 540065
+      company:
+      mc_search_term: 540065
+      tt_search_term:
+  -
+      serial_number: 65
+      symbol: SAIL
+      nse_code: SAIL
+      bse_code: 500113
+      company: Steel Authority of India Ltd
+      mc_search_term: 500113
+      tt_search_term:
+  -
+      serial_number: 66
+      symbol: SBICARD
+      nse_code: SBICARD
+      bse_code:
+      company:
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 67
+      symbol: SBIN
+      nse_code: SBIN
+      bse_code:
+      company:
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 68
+      symbol: SONATSOFTW
+      nse_code: SONATSOFTW
+      bse_code:
+      company:
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 69
+      symbol: TATAMOTORS
+      nse_code: TATAMOTORS
+      bse_code: 500570
+      company:
+      mc_search_term: 500570
+      tt_search_term:
+  -
+      serial_number: 70
+      symbol: TATASTEEL
+      nse_code: TATASTEEL
+      bse_code: 500470
+      company: Tata Steel Ltd
+      mc_search_term: 500470
+      tt_search_term:
+  -
+      serial_number: 71
+      symbol: TCS
+      nse_code: TCS
+      bse_code:
+      company:
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 72
+      symbol: TECHM
+      nse_code: TECHM
+      bse_code: 532755
+      company:
+      mc_search_term: 532755
+      tt_search_term:
+  -
+      serial_number: 73
+      symbol: TTKPRESTIG
+      nse_code: TTKPRESTIG
+      bse_code:
+      company: TTK Prestige Ltd
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 74
+      symbol: TVSMOTOR
+      nse_code: TVSMOTOR
+      bse_code:
+      company:
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 75
+      symbol: ULTRACEMCO
+      nse_code: ULTRACEMCO
+      bse_code:
+      company:
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 76
+      symbol: UPL
+      nse_code: UPL
+      bse_code: 512070
+      company:
+      mc_search_term: 512070
+      tt_search_term:
+  -
+      serial_number: 77
+      symbol: VGUARD
+      nse_code: VGUARD
+      bse_code:
+      company:
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 78
+      symbol: VOLTAS
+      nse_code: VOLTAS
+      bse_code:
+      company:
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 79
+      symbol: WHIRLPOOL
+      nse_code: WHIRLPOOL
+      bse_code: 500238
+      company:
+      mc_search_term: 500238
+      tt_search_term:
+  -
+      serial_number: 80
+      symbol: WIPRO
+      nse_code: WIPRO
+      bse_code:
+      company:
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 81
+      symbol: AWL
+      nse_code: AWL
+      bse_code:
+      company: Adani Wilmar
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 82
+      symbol: NIITLTD
+      nse_code: NIITLTD
+      bse_code:
+      company: NIIT
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 83
+      symbol: NATIONALUM
+      nse_code: NATIONALUM
+      bse_code:
+      company: National Aluminium
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 84
+      symbol: CRISIL
+      nse_code: CRISIL
+      bse_code:
+      company: CRISIL
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 85
+      symbol: AUTOAXLES
+      nse_code: AUTOAXLES
+      bse_code:
+      company: Automotive Axles Ltd.
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 86
+      symbol: JKPAPER
+      nse_code: JKPAPER
+      bse_code:
+      company: JK Paper Ltd.
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 87
+      symbol: CANFINHOME
+      nse_code: CANFINHOME
+      bse_code:
+      company: Can Fin Homes Ltd
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 88
+      symbol: GLENMARK
+      nse_code: GLENMARK
+      bse_code: 532296
+      company: Glenmark Pharmaceuticals Ltd
+      mc_search_term: 532296
+      tt_search_term:
+  -
+      serial_number: 89
+      symbol: CREDITACC
+      nse_code: CREDITACC
+      bse_code:
+      company: CreditAccess Grameen Ltd
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 90
+      symbol: LTI
+      nse_code: LTI
+      bse_code:
+      company: Larsen & Toubro Infotech Ltd
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 91
+      symbol: MOTHERSUMI
+      nse_code: MOTHERSUMI
+      bse_code:
+      company: Motherson Sumi Systems Ltd
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 92
+      symbol: POLYCAB
+      nse_code: POLYCAB
+      bse_code:
+      company: Polycab India Ltd.
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 93
+      symbol: DALBHARAT
+      nse_code: DALBHARAT
+      bse_code:
+      company: Dalmia Bharat Ltd
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 94
+      symbol: FORTIS
+      nse_code: FORTIS
+      bse_code: 532843
+      company: Fortis Healthcare Ltd
+      mc_search_term: 532843
+      tt_search_term:
+  -
+      serial_number: 95
+      symbol: VAIBHAVGBL
+      nse_code: VAIBHAVGBL
+      bse_code:
+      company: Vaibhav Global
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 96
+      symbol: JSWISPL
+      nse_code: JSWISPL
+      bse_code:
+      company: JSW Ispat Special Products Ltd
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 97
+      symbol: ESCORTS
+      nse_code: ESCORTS
+      bse_code: 500495
+      company: Escorts Limited
+      mc_search_term: 500495
+      tt_search_term:
+  -
+      serial_number: 98
+      symbol: MASTEK
+      nse_code: MASTEK
+      bse_code:
+      company: Mastek
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 99
+      symbol: LALPATHLAB
+      nse_code: LALPATHLAB
+      bse_code:
+      company: Dr Lal Path Labs
+      mc_search_term: Dr Lal PathLabs
+      tt_search_term:
+  -
+      serial_number: 100
+      symbol: SUMICHEM
+      nse_code: SUMICHEM
+      bse_code:
+      company: Sumitomo Chemical India
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 101
+      symbol: ADANIENT
+      nse_code: ADANIENT
+      bse_code:
+      company: Adani Group
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 102
+      symbol: CAPLIPOINT
+      nse_code: CAPLIPOINT
+      bse_code:
+      company: Caplin Point Laboratories Ltd
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 103
+      symbol: TATAELXSI
+      nse_code: TATAELXSI
+      bse_code:
+      company: Tata Elxsi
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 104
+      symbol: KALPATPOWR
+      nse_code: KALPATPOWR
+      bse_code:
+      company: Kalpataru Power Transmission Ltd.
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 105
+      symbol: CESC
+      nse_code: CESC
+      bse_code: 500084
+      company: CESC Limited
+      mc_search_term: 500084
+      tt_search_term:
+  -
+      serial_number: 106
+      symbol: HGS
+      nse_code: HGS
+      bse_code: 532859
+      company: Hinduja Global Solutions Ltd
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 107
+      symbol: RECLTD
+      nse_code: RECLTD
+      bse_code: 532955
+      company: REC Ltd
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 108
+      symbol: ALLSEC
+      nse_code: ALLSEC
+      bse_code: 532633
+      company: Allsec Technologies Ltd
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 109
+      symbol: PTC
+      nse_code: PTC
+      bse_code: 532524
+      company: PTC India Ltd
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 110
+      symbol: HUDCO
+      nse_code: HUDCO
+      bse_code: 540530
+      company: Housing & Urban Development Corporation Ltd (HUDCO)
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 111
+      symbol: NHPC
+      nse_code: NHPC
+      bse_code: 533098
+      company: NHPC Ltd
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 112
+      symbol: GEOJITFSL
+      nse_code: GEOJITFSL
+      bse_code: 532285
+      company: Geojit Financial Services Ltd
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 113
+      symbol: TIDEWATER
+      nse_code: TIDEWATER
+      bse_code: 590005
+      company: Tide Water Oil Co (I) Ltd
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 114
+      symbol: COCHINSHIP
+      nse_code: COCHINSHIP
+      bse_code: 540678
+      company: Cochin Shipyard Ltd
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 115
+      symbol: IRFC
+      nse_code: IRFC
+      bse_code: 543257
+      company: Indian Railway Finance Corporation Ltd
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 116
+      symbol: RVNL
+      nse_code: RVNL
+      bse_code: 542649
+      company: Rail Vikas Nigam Ltd
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 117
+      symbol: PCBL
+      nse_code: PCBL
+      bse_code: 506590
+      company: PCBL Ltd
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 118
+      symbol: HEIDELBERG
+      nse_code: HEIDELBERG
+      bse_code: 500292
+      company: HeidelbergCement India Ltd
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 119
+      symbol: TECHNOE
+      nse_code: TECHNOE
+      bse_code: 542141
+      company: Techno Electric & Engineering Company Ltd
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 120
+      symbol: VSTIND
+      nse_code: VSTIND
+      bse_code: 509966
+      company: VST Industries Ltd
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 121
+      symbol: GULFOILLUB
+      nse_code: GULFOILLUB
+      bse_code: 538567
+      company: Gulf Oil Lubricants India Ltd
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 122
+      symbol: SWARAJENG
+      nse_code: SWARAJENG
+      bse_code: 500407
+      company: Swaraj Engines Ltd
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 123
+      symbol: SHREDIGCEM
+      nse_code: SHREDIGCEM
+      bse_code: 502180
+      company: Shree Digvijay Cement Co. Ltd
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 124
+      symbol: ISEC
+      nse_code: ISEC
+      bse_code: 541179
+      company: ICICI Securities Ltd
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 125
+      symbol: GPTINFRA
+      nse_code: GPTINFRA
+      bse_code: 533761
+      company: GPT Infraprojects Ltd
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 126
+      symbol: RCF
+      nse_code: RCF
+      bse_code: 524230
+      company: Rashtriya Chemicals & Fertilizers Ltd
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 127
+      symbol: EMAMILTD
+      nse_code: EMAMILTD
+      bse_code: 531162
+      company: Emami Ltd
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 128
+      symbol: HAL
+      nse_code: HAL
+      bse_code: 541154
+      company: Hindustan Aeronautics Ltd
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 129
+      symbol: MSTCLTD
+      nse_code: MSTCLTD
+      bse_code: 542597
+      company: MSTC Ltd
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 130
+      symbol: UNIENTER
+      nse_code: UNIENTER
+      bse_code: 500429
+      company: Uniphos Enterprises Ltd
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 131
+      symbol: REDINGTON
+      nse_code: REDINGTON
+      bse_code: 532805
+      company: Redington India Ltd
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 132
+      symbol: VISAKAIND
+      nse_code: VISAKAIND
+      bse_code: 509055
+      company: Visaka Industries Ltd
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 133
+      symbol: COLPAL
+      nse_code: COLPAL
+      bse_code: 500830
+      company: Colgate-Palmolive (India) Ltd
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 134
+      symbol: KSL
+      nse_code: KSL
+      bse_code: 500235
+      company: Kalyani Steels Ltd
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 135
+      symbol: ESTER
+      nse_code: ESTER
+      bse_code: 500136
+      company: Ester Industries Ltd
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 136
+      symbol: NAM-INDIA
+      nse_code: NAM-INDIA
+      bse_code: 540767
+      company: Nippon Life India Asset Management Ltd
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 137
+      symbol: GODFRYPHLP
+      nse_code: GODFRYPHLP
+      bse_code: 500163
+      company: Godfrey Phillips India Ltd
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 138
+      symbol: KIRLFER
+      nse_code: KIRLFER
+      bse_code: 500245
+      company: Kirloskar Ferrous Industries Ltd
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 139
+      symbol: EPL
+      nse_code: EPL
+      bse_code: 500135
+      company: EPL Ltd
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 140
+      symbol: SHRIRAMCIT
+      nse_code: SHRIRAMCIT
+      bse_code: 532498
+      company: Shriram City Union Finance Ltd
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 141
+      symbol: CONTROLPR
+      nse_code: CONTROLPR
+      bse_code: 522295
+      company: Control Print Ltd
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 142
+      symbol: MAWANASUG
+      nse_code: MAWANASUG
+      bse_code: 523371
+      company: Mawana Sugars Ltd
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 143
+      symbol: TNPETRO
+      nse_code: TNPETRO
+      bse_code: 500777
+      company: Tamil Nadu Petro Products Ltd
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 144
+      symbol: MAZDA
+      nse_code: MAZDA
+      bse_code: 523792
+      company: Mazda Ltd
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 145
+      symbol: JINDALSAW
+      nse_code: JINDALSAW
+      bse_code: 500378
+      company: Jindal Saw Ltd
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 146
+      symbol: QUICKHEAL
+      nse_code: QUICKHEAL
+      bse_code: 539678
+      company: Quick Heal Technologies Ltd
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 147
+      symbol: RSYSTEMS
+      nse_code: RSYSTEMS
+      bse_code: 532735
+      company: R Systems International Ltd
+      mc_search_term:
+      tt_search_term:
+  -
+      serial_number: 148
+      symbol: TORNTPOWER
+      nse_code: TORNTPOWER
+      bse_code: 532779
+      company: Torrent Power Ltd
+      mc_search_term:
+      tt_search_term:

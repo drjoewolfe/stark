@@ -4,8 +4,8 @@ extractors_to_run:
   - ticker_tape
 
 stock_extract_symbols:
-#  - ACC
-#  - ALKEM
+  - ACC
+  - ALKEM
 #  - AUROPHARMA
 #  - AVANTIFEED
 #  - AXISBANK
@@ -24,7 +24,8 @@ stock_extract_symbols:
 #  - CROMPTON
 #  - CUMMINSIND
 #  - EXCELINDUS
-#  - FINPIPE
+#  - FEDERALBNK
+#  - FINOLEXIND
 #  - GAIL
 #  - GICRE
 #  - GRASIM
@@ -68,4 +69,34 @@ stock_extract_symbols:
 #  - VGUARD
 #  - VOLTAS
 #  - WHIRLPOOL
-  - WIPRO
+#  - WIPRO
+#  - AWL
+#  - ADANIPOWER
+#  - NIITLTD
+#  - NATIONALUM
+#  - CRISIL
+#  - CDSL
+#  - AUTOAXLES
+#  - JKPAPER
+#  - CANFINHOME
+#  - GLENMARK
+#  - CREDITACC
+#  - LTI
+#  - MOTHERSUMI
+#  - TTKPRESTIG
+#  - POLYCAB
+#  - DALBHARAT
+#  - FORTIS
+#  - VAIBHAVGBL
+#  - JSWISPL
+#  - ESCORTS
+#  - MASTEK
+#  - LALPATHLAB
+#  - SUMICHEM
+#  - ADANIENT
+#  - CAPLIPOINT
+#  - TATAELXSI
+#  - KALPATPOWR
+#  - NMDC
+#  - TATASTEEL
+#  - CESC

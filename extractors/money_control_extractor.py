@@ -3,7 +3,7 @@ from termcolor import colored
 
 from selenium.webdriver.common.by import By
 
-import stock_info
+from library import stock_info
 from utilities import get_decimal, get_int
 
 
@@ -34,10 +34,11 @@ def extract_money_control(browser, stark_config, stock_extract_configuration_map
 def extract_money_control_for_request(browser, configuration):
     info = None
 
-    symbol = configuration["symbol"]
-    search_term = symbol
-    if "mc_search_term" in configuration:
-        search_term = configuration["mc_search_term"]
+    # raise IOError("Dummy error..")
+
+    search_term = configuration["mc_search_term"]
+    if not search_term:
+        search_term = configuration["symbol"]
 
     browser.get("https://www.moneycontrol.com/india/stockpricequote/")
     search_box = browser.find_element(By.ID, "company")

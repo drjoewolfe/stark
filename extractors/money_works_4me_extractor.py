@@ -2,7 +2,7 @@ import time
 
 from selenium.webdriver.common.by import By
 
-import stock_info
+from library import stock_info
 from utilities import get_decimal, get_int
 
 

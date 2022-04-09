@@ -1,13 +1,21 @@
 from datetime import datetime
 
 
-def generate_output(stark_output):
+def generate_output(extraction_summary):
     print(f"Generating output")
     datestamp = datetime.now().strftime("%Y_%m_%d-%I_%M_%S_%p")
     filename = "stark_output" + "_" + datestamp + ".csv"
     filepath = "out/" + filename
 
-    counter, size = 1, len(stark_output)
+    extracts = extraction_summary.extracts
+
+    counter, size = 1, len(extracts)
+
+    if size == 0:
+        print(f"\tNo successful extracts. Skipping output file creation.")
+        return
+
+    print(f"\t{size} successful extracts")
     print(f"\tFilename: {filename}")
     with open(filepath, 'w') as csvfile:
         header = "symbol, name, sector, price, day_open_price, day_previous_close_price, volume, value_lakhs, vwap, beta, day_high_price, day_low_price, uc_limit, lc_limit, week_52_high, " \
@@ -17,7 +25,7 @@ def generate_output(stark_output):
         csvfile.writelines(header)
         csvfile.write("\n")
 
-        for info in stark_output:
+        for info in extracts:
             record = info.symbol + ", " \
                      + info.name + ", " \
                      + info.sector + ", " \

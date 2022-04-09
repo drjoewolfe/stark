@@ -2,8 +2,7 @@ import time
 from termcolor import colored
 from selenium.webdriver.common.by import By
 
-import stock_info
-from utilities import get_decimal, get_int
+from library import stock_info
 
 
 def extract_ticker_tape(browser, stark_config, stock_extract_configuration_map, stock_extract_symbols):
@@ -33,9 +32,11 @@ def extract_ticker_tape(browser, stark_config, stock_extract_configuration_map, 
 def extract_ticker_tape_for_request(browser, configuration):
     info = None
 
-    search_term = configuration["symbol"]
-    if "tt_search_term" in configuration:
-        search_term = configuration["tt_search_term"]
+    # raise IOError("Dummy error..")
+
+    search_term = configuration["tt_search_term"]
+    if not search_term:
+        search_term = configuration["symbol"]
 
     browser.get("https://www.tickertape.in/")
     search_box = browser.find_element(By.ID, "search-stock-input")
