@@ -1,13 +1,14 @@
 from datetime import datetime
+from library import extraction_summary
 
 
-def generate_output(extraction_summary):
+def generate_output(summary : extraction_summary.ExtractionSummary):
     print(f"Generating output")
     datestamp = datetime.now().strftime("%Y_%m_%d-%I_%M_%S_%p")
     filename = "stark_output" + "_" + datestamp + ".csv"
     filepath = "out/" + filename
 
-    extracts = extraction_summary.extracts
+    extracts = summary.extracts
 
     counter, size = 1, len(extracts)
 
@@ -15,7 +16,14 @@ def generate_output(extraction_summary):
         print(f"\tNo successful extracts. Skipping output file creation.")
         return
 
-    print(f"\t{size} successful extracts")
+    print(f"\t{size} successful extracts\n")
+    print(f"\tSuceeded extracts ({len(summary.succeeded_symbols)}):")
+    print(f"\t\t{','.join(summary.succeeded_symbols)}\n")
+
+    if len(summary.failed_symbols) > 0:
+        print(f"\tFailed extracts ({len(summary.failed_symbols)}):")
+        print(f"\t\t{','.join(summary.failed_symbols)}\n")
+
     print(f"\tFilename: {filename}")
     with open(filepath, 'w') as csvfile:
         header = "symbol, name, sector, price, day_open_price, day_previous_close_price, volume, value_lakhs, vwap, beta, day_high_price, day_low_price, uc_limit, lc_limit, week_52_high, " \
@@ -65,4 +73,4 @@ def generate_output(extraction_summary):
             csvfile.write("\n")
             counter += 1
 
-        print(f"\tOutput file generated successfully")
+        print(f"\n\tOutput file generated successfully")

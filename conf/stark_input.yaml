@@ -3,7 +3,7 @@ extractors_to_run:
   - money_control
   - ticker_tape
 
-stock_extract_symbols:
+symbols_to_extract:
   - ACC
   - ALKEM
 #  - AUROPHARMA

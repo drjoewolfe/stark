@@ -14,15 +14,20 @@ def run_extractors(stark_config, stark_input):
     browser = webdriver.Chrome(executable_path=chrome_driver_path)
     browser.maximize_window()
 
-    stock_extract_symbols = stark_input["stock_extract_symbols"]
+    symbols_to_extract = stark_input["symbols_to_extract"]
     extractors_to_run = stark_input["extractors_to_run"]
     stock_extract_configuration_map = get_stock_extract_configuration_map(stark_config)
 
     summary = extraction_summary.ExtractionSummary()
+    summary.symbols_to_extract += symbols_to_extract
+
     extracts = summary.extracts
+    succeeded_symbols = summary.succeeded_symbols
+    failed_symbols = summary.failed_symbols
+
     stock_extract_configurations = []
 
-    for extract_symbol in stock_extract_symbols:
+    for extract_symbol in symbols_to_extract:
         stock_extract_configurations.append(stock_extract_configuration_map[extract_symbol])
 
     counter, size = 1, len(stock_extract_configurations)
@@ -53,6 +58,9 @@ def run_extractors(stark_config, stark_input):
 
         if succeeded:
             extracts.append(info)
+            succeeded_symbols.append(symbol)
+        else:
+            failed_symbols.append(symbol)
 
         counter += 1
 
