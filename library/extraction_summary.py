@@ -1,9 +1,6 @@
 class ExtractionSummary:
-    extracts = []
-
-    symbols_to_extract = []
-    succeeded_symbols = []
-    failed_symbols = []
-
     def __init__(self):
-        pass
+        self.extracts = []
+        self.symbols_to_extract = []
+        self.succeeded_symbols = []
+        self.failed_symbols = []

@@ -10,12 +10,37 @@ from extractors.ticker_tape_extractor import extract_ticker_tape_for_request
 
 
 def run_extractors(stark_config, stark_input):
+    symbols_to_extract = stark_input["symbols_to_extract"]
+    extractors_to_run = stark_input["extractors_to_run"]
+
+    max_retry_counts = stark_config["system"]["max_retry_counts"]
+    attempt_number = 1
+
+    run_summary = extraction_summary.ExtractionSummary()
+    while attempt_number <= max_retry_counts:
+        print(f"\n\tExtractor run - Attempt {attempt_number}")
+        attempt_summary = run_selected_extractors(stark_config, symbols_to_extract, extractors_to_run)
+
+        run_summary.extracts += attempt_summary.extracts
+        run_summary.succeeded_symbols += attempt_summary.succeeded_symbols
+        run_summary.failed_symbols.clear()
+        run_summary.failed_symbols += attempt_summary.failed_symbols
+
+        if len(attempt_summary.failed_symbols) == 0:
+            break
+
+        symbols_to_extract.clear()
+        symbols_to_extract += attempt_summary.failed_symbols
+        attempt_number += 1
+
+    return run_summary
+
+
+def run_selected_extractors(stark_config, symbols_to_extract, extractors_to_run):
     chrome_driver_path = stark_config["system"]["chrome_driver_location"]
     browser = webdriver.Chrome(executable_path=chrome_driver_path)
     browser.maximize_window()
 
-    symbols_to_extract = stark_input["symbols_to_extract"]
-    extractors_to_run = stark_input["extractors_to_run"]
     stock_extract_configuration_map = get_stock_extract_configuration_map(stark_config)
 
     summary = extraction_summary.ExtractionSummary()
@@ -38,20 +63,20 @@ def run_extractors(stark_config, stark_input):
         if company:
             title += " (" + company + ")"
 
-        print(f"\t[{counter} / {size}] " + configuration["symbol"])
+        print(f"\t\t[{counter} / {size}] " + configuration["symbol"])
 
         info = stock_info.StockInfo()
         info.symbol = symbol
         succeeded = True
         for extractor_name in extractors_to_run:
             if extractor_name == "money_control":
-                print(f"\t\tExtracting " + title + " from money-control")
+                print(f"\t\t\tExtracting " + title + " from money-control")
                 if not execute_extractor(extract_money_control_for_request, browser, configuration, info):
                     succeeded = False
                     break
 
             elif extractor_name == "ticker_tape":
-                print(f"\t\tExtracting " + title + " from ticker-tape")
+                print(f"\t\t\tExtracting " + title + " from ticker-tape")
                 if not execute_extractor(extract_ticker_tape_for_request, browser, configuration, info):
                     succeeded = False
                     break
@@ -64,6 +89,7 @@ def run_extractors(stark_config, stark_input):
 
         counter += 1
 
+    browser.close()
     return summary
 
 
@@ -72,10 +98,10 @@ def execute_extractor(extractor_func, browser, configuration, merged_info):
         symbol = configuration["symbol"]
         extracted_stock_info = extractor_func(browser, configuration)
         merged_info.merge(extracted_stock_info)
-        print(colored(f"\t\t\tExtraction successful for {symbol}", "green"))
+        print(colored(f"\t\t\t\tExtraction successful for {symbol}", "green"))
         return True
     except Exception as e:
-        print(colored(f"\t\t\tError extracting {symbol}. Skipping...", "red"))
+        print(colored(f"\t\t\t\tError extracting {symbol}. Skipping...", "red"))
         print("\t\t\t" + repr(e))
         return False
 

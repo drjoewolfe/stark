@@ -1,6 +1,7 @@
 ---
 system:
   chrome_driver_location: "D:\\Code\\modules\\chromedriver_win32\\chromedriver.exe"
+  max_retry_counts: 5
 
 stock_extract_configurations:
   -
