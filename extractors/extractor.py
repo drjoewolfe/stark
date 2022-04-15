@@ -3,6 +3,7 @@ from termcolor import colored
 
 from library import stock_info
 from library import extraction_summary
+from library.timer import Timer
 from extractors.money_control_extractor import extract_money_control
 from extractors.money_control_extractor import extract_money_control_for_request
 from extractors.ticker_tape_extractor import extract_ticker_tape
@@ -17,7 +18,12 @@ def run_extractors(stark_config, stark_input):
     attempt_number = 1
 
     run_summary = extraction_summary.ExtractionSummary()
+    run_timer = Timer()
+    run_timer.start()
+
+    attempt_timer = Timer()
     while attempt_number <= max_retry_counts:
+        attempt_timer.start()
         print(f"\n\tExtractor run - Attempt {attempt_number}")
         attempt_summary = run_selected_extractors(stark_config, symbols_to_extract, extractors_to_run)
 
@@ -26,12 +32,18 @@ def run_extractors(stark_config, stark_input):
         run_summary.failed_symbols.clear()
         run_summary.failed_symbols += attempt_summary.failed_symbols
 
+        attempt_timer.stop()
+        print(f"\tAttempt {attempt_number} complete ({attempt_timer.elapsed_time:0.2f} seconds)")
+
         if len(attempt_summary.failed_symbols) == 0:
             break
 
         symbols_to_extract.clear()
         symbols_to_extract += attempt_summary.failed_symbols
         attempt_number += 1
+
+    run_timer.stop()
+    print(f"\nExtraction runs complete ({run_timer.elapsed_time:0.2f} seconds)")
 
     return run_summary
 
@@ -94,15 +106,20 @@ def run_selected_extractors(stark_config, symbols_to_extract, extractors_to_run)
 
 
 def execute_extractor(extractor_func, browser, configuration, merged_info):
+    execution_timer = Timer()
+    execution_timer.start()
+
     try:
         symbol = configuration["symbol"]
         extracted_stock_info = extractor_func(browser, configuration)
         merged_info.merge(extracted_stock_info)
-        print(colored(f"\t\t\t\tExtraction successful for {symbol}", "green"))
+        execution_timer.stop()
+        print(colored(f"\t\t\t\tExtraction successful for {symbol}", "green") + f" ({execution_timer.elapsed_time:0.2f} seconds)")
         return True
     except Exception as e:
-        print(colored(f"\t\t\t\tError extracting {symbol}. Skipping...", "red"))
-        print("\t\t\t" + repr(e))
+        execution_timer.stop()
+        print(colored(f"\t\t\t\tError extracting {symbol}. Skipping...", "red") + f" ({execution_timer.elapsed_time:0.2f} seconds)")
+        print("\t\t\t\t" + repr(e))
         return False
 
 
