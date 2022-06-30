@@ -41,6 +41,11 @@ def extract_money_control_for_request(browser, configuration):
         search_term = configuration["symbol"]
 
     browser.get("https://www.moneycontrol.com/india/stockpricequote/")
+
+    notification_cancel_buttons = browser.find_elements_by_css_selector('#wzrk-cancel')
+    if len(notification_cancel_buttons) > 0:
+        notification_cancel_buttons[0].click()
+
     search_box = browser.find_element(By.ID, "company")
     search_box.send_keys(search_term)
     time.sleep(2)

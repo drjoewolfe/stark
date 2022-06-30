@@ -2,7 +2,7 @@
 system:
   chrome_driver_location: "D:\\Code\\modules\\chromedriver_win32\\chromedriver.exe"
   max_retry_counts: 5
-  parallelism: 3 # max 5
+  parallelism: 5 # max 5
 
 stock_extract_configurations:
   - serial_number: 1
@@ -2496,7 +2496,7 @@ stock_extract_configurations:
     bse_code: 543350
     company:
     mc_search_term: 543350
-    tt_search_term:
+    tt_search_term: Vijaya Diagnostic Centre Ltd
   - serial_number: 357
     symbol: WELCORP
     nse_code:

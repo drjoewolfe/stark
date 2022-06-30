@@ -24,6 +24,8 @@ def run_extractors(stark_config, stark_input):
     parallelism = stark_config["system"]["parallelism"]
     if parallelism > 5:
         parallelism = 5
+    if len(symbols_to_extract) < parallelism:
+        parallelism = len(symbols_to_extract)
 
     requests = generate_run_requests(symbols_to_extract, extractors_to_run, parallelism)
 
@@ -72,7 +74,7 @@ def run_extractors_async(stark_config, run_request: RunRequest, task_info: TaskI
         run_summary.failed_symbols += attempt_summary.failed_symbols
 
         attempt_timer.stop()
-        log(f"Attempt {attempt_number} complete ({attempt_timer.elapsed():0.2f} seconds)", task_info, attempt_info, 1)
+        log(f"Attempt {attempt_number} complete ({attempt_timer.elapsed_formatted()})", task_info, attempt_info, 1)
 
         if len(attempt_summary.failed_symbols) == 0:
             break
@@ -82,7 +84,7 @@ def run_extractors_async(stark_config, run_request: RunRequest, task_info: TaskI
         attempt_number += 1
 
     run_timer.stop()
-    log(f"Extraction runs complete ({run_timer.elapsed():0.2f} seconds)", task_info)
+    log(f"Extraction runs complete ({run_timer.elapsed_formatted()})", task_info)
 
     return run_summary
 
@@ -186,13 +188,13 @@ def execute_extractor(extractor_func, browser, configuration, merged_info, run_t
         merged_info.merge(extracted_stock_info)
         execution_timer.stop()
         log(colored(f"Extraction successful for {symbol}",
-                    "green") + f" (Current: {execution_timer.elapsed():0.2f}s, Attempt: {attempt_timer.elapsed():0.2f}s, Run: {run_timer.elapsed():0.2f}s)",
+                    "green") + f" (Current: {execution_timer.elapsed_formatted()}, Attempt: {attempt_timer.elapsed_formatted()}, Run: {run_timer.elapsed_formatted()})",
             task_info, attempt_info, 4)
         return True
     except Exception as e:
         execution_timer.stop()
         log(colored(f"Error extracting {symbol}. Skipping...",
-                    "red") + f" (Current: {execution_timer.elapsed():0.2f}s, Attempt: {attempt_timer.elapsed():0.2f}s, Run: {run_timer.elapsed():0.2f}s)",
+                    "red") + f" (Current: {execution_timer.elapsed_formatted()}, Attempt: {attempt_timer.elapsed_formatted()}, Run: {run_timer.elapsed_formatted()})",
             task_info, attempt_info, 4)
         log(repr(e), task_info, attempt_info, 4)
         return False

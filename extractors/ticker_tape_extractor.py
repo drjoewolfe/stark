@@ -47,11 +47,9 @@ def extract_ticker_tape_for_request(browser, configuration):
     browser.get(search_result_link)
 
     time.sleep(1)
-    sector_pe = browser.find_element(By.XPATH, "//div[@data-section-tag=\"key-metrics\"]/div/div//span[contains(text(), \"Sector PE\")]/../../../div[2]").text
-    sector_pb = browser.find_element(By.XPATH,
-                                     "//div[@data-section-tag=\"key-metrics\"]/div/div//span[contains(text(), \"Sector PB\")]/../../../div[2]").text
-    sector_dividend_yield = browser.find_element(By.XPATH,
-                                     "//div[@data-section-tag=\"key-metrics\"]/div/div//span[contains(text(), \"Sector Div Yld\")]/../../../div[2]").text
+    sector_pe = browser.find_element(By.XPATH, "//div[@data-section-tag=\"key-metrics\"]/div[2]/div/table[2]/tbody/tr/td[1]").text
+    sector_pb = browser.find_element(By.XPATH, "//div[@data-section-tag=\"key-metrics\"]/div[2]/div/table[2]/tbody/tr/td[2]").text
+    sector_dividend_yield = browser.find_element(By.XPATH, "//div[@data-section-tag=\"key-metrics\"]/div[2]/div/table[2]/tbody/tr/td[3]").text
 
     tt_intrinsic_value_commentary = browser.find_element(By.XPATH, "//span[contains(text(), 'Intrinsic Value')]/../../p").text
     tt_returns_vs_fd_rates_commentary = browser.find_element(By.XPATH, "//span[contains(text(), 'ROE vs FD rates')]/../../p").text

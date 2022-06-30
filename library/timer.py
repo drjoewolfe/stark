@@ -1,4 +1,5 @@
 import time
+import math
 
 
 class TimerError(Exception):
@@ -33,3 +34,21 @@ class Timer:
             raise TimerError(f"Timer is not running. Use .start() to start it")
 
         return time.perf_counter() - self._start_time
+
+    def elapsed_formatted(self):
+        elapsed_seconds = self.elapsed()
+        if elapsed_seconds < 60:
+            return f"{elapsed_seconds:0.2f}s"
+        elif elapsed_seconds < 3600:
+            minutes = math.floor(elapsed_seconds / 60)
+            seconds = elapsed_seconds % 60
+            return f"{minutes}m {seconds:0.2f}s"
+        else:
+            hours = math.floor(elapsed_seconds / 3600)
+
+            hour_seconds = hours * 3600
+            minutes = math.floor((elapsed_seconds - hour_seconds) / 60)
+
+            minute_seconds = minutes * 60
+            seconds = (elapsed_seconds - hour_seconds - minute_seconds) % 60
+            return f"{hours}h {minutes}m {seconds:0.2f}s"
