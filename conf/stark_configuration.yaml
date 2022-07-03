@@ -641,7 +641,7 @@ stock_extract_configurations:
     bse_code:
     company: Motherson Sumi Systems Ltd
     mc_search_term:
-    tt_search_term:
+    tt_search_term:  MOTHERSON
   - serial_number: 92
     symbol: POLYCAB
     nse_code: POLYCAB

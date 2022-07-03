@@ -2,7 +2,7 @@ from datetime import datetime
 from library import extraction_summary
 
 
-def generate_output(summary : extraction_summary.ExtractionSummary):
+def generate_output(summary: extraction_summary.ExtractionSummary):
     print(f"Generating output")
     datestamp = datetime.now().strftime("%Y_%m_%d-%I_%M_%S_%p")
     filename = "stark_output" + "_" + datestamp + ".csv"
@@ -35,8 +35,8 @@ def generate_output(summary : extraction_summary.ExtractionSummary):
 
         for info in extracts:
             record = info.symbol + ", " \
-                     + info.name + ", " \
-                     + info.sector + ", " \
+                     + clean(info.name) + ", " \
+                     + clean(info.sector) + ", " \
                      + str(info.price) + ", " \
                      + str(info.day_open_price) + ", " \
                      + str(info.day_previous_close_price) + ", " \
@@ -62,11 +62,11 @@ def generate_output(summary : extraction_summary.ExtractionSummary):
                      + str(info.dividend_yield) + ", " \
                      + str(info.avg_volume_20D) + ", " \
                      + str(info.avg_delivery_percent_20D) + ", " \
-                     + "\"" + str(info.tt_intrinsic_value_commentary) + "\"" + ", " \
-                     + "\"" + str(info.tt_returns_vs_fd_rates_commentary) + "\"" + ", " \
-                     + "\"" + str(info.tt_dividend_returns_commentary) + "\"" + ", " \
-                     + "\"" + str(info.tt_entry_pont_commentary) + "\"" + ", " \
-                     + "\"" + str(info.tt_red_flags_commentary) + "\""
+                     + "\"" + clean(str(info.tt_intrinsic_value_commentary)) + "\"" + ", " \
+                     + "\"" + clean(str(info.tt_returns_vs_fd_rates_commentary)) + "\"" + ", " \
+                     + "\"" + clean(str(info.tt_dividend_returns_commentary)) + "\"" + ", " \
+                     + "\"" + clean(str(info.tt_entry_pont_commentary)) + "\"" + ", " \
+                     + "\"" + clean(str(info.tt_red_flags_commentary)) + "\""
 
             print(f"\t\t[Record {counter} / {size}] {info}")
             csvfile.writelines(record)
@@ -74,3 +74,8 @@ def generate_output(summary : extraction_summary.ExtractionSummary):
             counter += 1
 
         print(f"\n\tOutput file generated successfully")
+
+
+def clean(text):
+    c_text = text.replace(",", "_")
+    return c_text
